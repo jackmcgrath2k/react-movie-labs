@@ -18,6 +18,10 @@ const formControl =
     backgroundColor: "rgb(255, 255, 255)"
   };
 
+export default function FilterMoviesCard(props) {
+
+  const [genres, setGenres] = useState([{ id: '0', name: "All" }])
+
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
@@ -44,9 +48,7 @@ const formControl =
     handleChange(e, "genre", e.target.value)
   };
 
-export default function FilterMoviesCard(props) {
 
-  const [genres, setGenres] = useState([{ id: '0', name: "All" }])
   return (
     <Card 
       sx={{
